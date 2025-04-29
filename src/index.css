@@ -1,0 +1,109 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 100% 99%;
+    --foreground: 260 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 10% 10%;
+
+    --primary: 265 84% 58%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 84% 32%;
+    --secondary-foreground: 260 10% 10%;
+
+    --muted: 260 20% 96%;
+    --muted-foreground: 260 10% 45%;
+
+    --accent: 47 87% 48%;
+    --accent-foreground: 260 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 260 10% 90%;
+    --input: 260 10% 90%;
+    --ring: 260 84% 60%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), rgba(0, 0, 0, 0)),
+                     linear-gradient(to bottom, rgba(124, 58, 237, 0.05), rgba(13, 148, 136, 0.05));
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.story-text {
+  @apply font-serif leading-relaxed;
+}
+
+.magic-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-diva-purple to-diva-teal;
+}
+
+.shimmer {
+  @apply bg-gradient-to-r from-transparent via-white/20 to-transparent bg-[length:1000px_100%] animate-shimmer;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: particle-animation 8s ease-in-out infinite;
+}
+
+@keyframes particle-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  20% {
+    opacity: 0.5;
+    transform: translateY(-20px) scale(1);
+  }
+  80% {
+    opacity: 0.3;
+    transform: translateY(-80px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0);
+  }
+}
