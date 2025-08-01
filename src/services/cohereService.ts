@@ -3,7 +3,7 @@ import { toast } from "@/components/ui/sonner";
 
 // Using a temporary API key approach - should be moved to environment variables
 // or a more secure approach in production
-const API_KEY = "EmTw3BtxOTFe9WE1Ec2Xw854tXUL3vS2ger8wW9i";
+const API_KEY = process.env.NEXT_PUBLIC_COHERE_API_KEY || "";
 
 interface GenerateStoryParams {
   theme: string;
